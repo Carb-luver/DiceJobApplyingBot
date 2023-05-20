@@ -1,1 +1,1 @@
-# DiceJobApplyingBot
+# DiceJobApplyingRobot

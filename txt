@@ -1,0 +1,69 @@
+<a class="l"
+href="https://www.dice.com/apply-with-dice/login?buttonType=easyApply" aria-label="Sign In. Personalized recommendation based on your history" data-ved="2ahUKEwiC6NXqx__-AhW7FlkFHbCFA-0QmuEJegQIFRAB" ping="/url?sa=t&amp;source=web&amp;rct=j&amp;url=https://www.dice.com/apply-with-dice/login%3FbuttonType%3DeasyApply&amp;ved=2ahUKEwiC6NXqx__-AhW7FlkFHbCFA-0QmuEJegQIFRAB">
+Sign In</a>
+
+<input id="user-name-input" name="email" type="email" class="form-control" value="">
+<input id="password-input" name="password" type="password" class="form-control" value="">
+
+//*[@id="resume-select-group"]/span[3]/a
+/html/body/div[3]/form/div[2]/div/div[2]/span[3]/a
+<a href="/dashboard/profiles" target="_blank">Manage your Résumé at Dice.com</a>
+<a href="/dashboard/profiles" target="_blank">Manage your Résumé at Dice.com</a>
+#resume-select-group > span:nth-child(4) > a
+document.querySelector("#resume-select-group > span:nth-child(4) > a")
+
+
+<a href="https://www.dice.com/jobs"><svg class="inline-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="#fff" d="m23.854 23.146-9.009-9.009A8.455 8.455 0 0 0 17 8.5C17 3.813 13.187 0 8.5 0S0 3.813 0 8.5 3.813 17 8.5 17a8.45 8.45 0 0 0 5.637-2.156l9.009 9.009a.5.5 0 0 0 .708-.707zM1 8.5C1 4.364 4.364 1 8.5 1S16 4.364 16 8.5 12.636 16 8.5 16 1 12.636 1 8.5z"></path></svg>Search jobs</a>
+header > div > nav > div.links > ul:nth-child(2) > li:nth-child(2) > a
+document.querySelector("body > div.layout-main-content-wrapper > div:nth-child(2) > div:nth-child(1) > dhi-seds-nav-header").shadowRoot.querySelector("dhi-seds-nav-header-display").shadowRoot.querySelector("header > div > nav > div.links > ul:nth-child(2) > li:nth-child(2) > a")
+/html/body/div[3]/div[2]/div[1]/dhi-seds-nav-header//dhi-seds-nav-header-display//header/div/nav/div[2]/ul[2]/li[2]/a
+/html/body/div[3]/div[2]/div[1]/dhi-seds-nav-header//dhi-seds-nav-header-display//header/div/nav/div[2]/ul[2]/li[2]/a
+//*[contains(@href, "jobs")]
+
+<input id="typeaheadInput" cdkoverlayorigin="" dhiglobalclickhandler="" data-cy="typeahead-input" autocomplete="off"
+class="form-control ng-tns-c52-0 ng-star-inserted" type="search" placeholder="Search Term">
+//*[@id="typeaheadInput"]
+
+
+//*[@id="facets"]/dhi-accordion[2]/div[2]/div/js-single-select-filter/div/div/button[3]
+
+<a _ngcontent-qvo-c93="" data-cy="card-title-link" class="card-title-link bold"
+href="https://www.dice.com/job-detail/7be54331-5edc-4a67-b926-2c5faca1f61e?searchlink=search%2F%3Fq%3Djunior%2520java%26countryCode%3DUS%26radius%3D30%26radiusUnit%3Dmi%26page%3D6%26pageSize%3D100%26filters.postedDate%3DONE%26language%3Den%26eid%3DS2Q_%2CgKQ_&amp;searchId=779787b2-155f-48be-bcbf-43fd08cf8bf4" id="4be024dec3237427fefc031c4c1b50dc"
+target="_self" rel="">
+Junior Business Analyst </a>
+//*[@id="05761a0630d1d6808fd43615f5d27adf"]
+
+<div class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-x-6">
+<div class="min-w-[80px] min-h-[6rem] mb-3 order-first md:row-span-2 md:col-span-1 flex items-start pt-2 max-w-[100px] max-h-[600px] overflow-hidden">
+<dhi-company-logo profile-url="https://www.dice.com/company-profile/b12b9c21-fe3d-5ec4-82fc-3f715323dd88" logo-url="https://assets.dice.com/external/images/empLogos/51aefc41f7ee0397726b3cb2704d29c9.png" company-name="10295358" class="hydrated">
+</dhi-company-logo>
+</div>
+<div class="flex justify-end pt-2 order-2 col-span-3 md:col-span-7 lg:order-3 lg:col-span-4">
+<div class="date-posted">
+<dhi-time-ago posted-date="2023-05-18T13:50:08.000Z" modified-date="2023-05-18T13:56:23.000Z" class="sc-dhi-time-ago-h sc-dhi-time-ago-s hydrated">
+<div class="p-reg-75 sc-dhi-time-ago">Posted 12 hours ago | Updated 12 hours ago</div>
+</dhi-time-ago></div><div class="dropdown relative"><button aria-expanded="false" class="hover:bg-slate-200 rounded" data-cy="optionsBtn"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" role="img"><g fill="#2B2927" stroke="none" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="0"><circle cx="4" cy="12" r="2.25"></circle><circle cx="12" cy="12" r="2.25"></circle><circle cx="20" cy="12" r="2.25"></circle></g></svg><span class="sr-only"> Options</span></button><div class="dropdown-menu hidden"><a class="dropdown-item" href="#" data-cy="share"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon inline-block mr-3 mb-1" viewBox="0 0 512 512" width="17" height="17" transform="scale(1.5)"><g fill="none" fill-rule="evenodd"><path d="M448 256L272 88v96C103.57 184 64 304.77 64 424c48.61-62.24 91.6-96 208-96v96z" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="32"></path></g></svg>Share</a><a href="#" data-cy="reportJobLink" id="reportFormLink" class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" class="ionicon inline-block mr-3 mb-1" viewBox="0 0 512 512" width="17" height="17" transform="scale(1.5)"><path d="M80 464V68.14a8 8 0 014-6.9C91.81 56.66 112.92 48 160 48c64 0 145 48 192 48a199.53 199.53 0 0077.23-15.77 2 2 0 012.77 1.85v219.36a4 4 0 01-2.39 3.65C421.37 308.7 392.33 320 352 320c-48 0-128-32-192-32s-80 16-80 16" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="32"></path></svg>Report</a></div></div></div><h1 data-cy="jobTitle" class="mb-1 col-span-4 order-3 lg:order-2 md:col-span-8 lg:col-span-7">Java Developer</h1><div class="job-info order-4 col-span-2 mb-10 md:mb-0 sm:col-span-1 md:col-span-4 lg:col-span-5 lg:mb-0"><ul class="list-none companyInfo flex flex-wrap mb-1"><li class="mr-1"><a href="https://www.dice.com/company-profile/b12b9c21-fe3d-5ec4-82fc-3f715323dd88" data-cy="companyNameLink">ARK Solutions Inc</a></li><li data-cy="companyLocation" class="bullet" data-testid="companyLocation">Remote or Richmond, VA</li></ul><p data-cy="compensationText">$80,000 - $140,000</p><p data-cy="employmentType" class="text-sm mb-1 md:inline md:mr-3 mt-4"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14px" viewBox="0 0 512 512" class="inline-block align-baseline mr-1.5"><path fill="#2B2927" d="M128 480h256V80c0-26.5-21.5-48-48-48H176c-26.5 0-48 21.5-48 48v400zm64-384h128v32H192V96zm320 80v256c0 26.5-21.5 48-48 48h-48V128h48c26.5 0 48 21.5 48 48zM96 480H48c-26.5 0-48-21.5-48-48V176c0-26.5 21.5-48 48-48h48v352z"></path></svg>Full Time</p><ul class="list-none flex md:inline-flex"></ul></div><div class="order-last col-span-full flex flex-wrap justify-around items-start md:items-end md:col-span-4 md:justify-end lg:col-start-7 lg:col-span-6"><div class="py-4 text-right"><application-viewed job-id="42dd9b83-b523-49d5-90e4-be626a821cbd" class="hydrated"></application-viewed></div><div class="w-full flex justify-end"><div class="job-search-button mr-4 h-[3rem]"><dhi-save-job job-id="42dd9b83-b523-49d5-90e4-be626a821cbd" job-title="Java Developer" analytics-category="Job Description Page" classname="saveJobBtn" class="dhi-css-reset hydrated"></dhi-save-job></div>
+<div class="apply-button flex-auto md:flex-none h-[3rem]">
+<apply-button-wc job-id="42dd9b83-b523-49d5-90e4-be626a821cbd" job-title="Java Developer" class="hydrated"></apply-button-wc></div></div></div></div>
+
+<div class="order-last col-span-full flex flex-wrap justify-around items-start md:items-end md:col-span-4 md:justify-end lg:col-start-7 lg:col-span-6"><div class="py-4 text-right"><application-viewed job-id="42dd9b83-b523-49d5-90e4-be626a821cbd" class="hydrated"></application-viewed></div><div class="w-full flex justify-end"><div class="job-search-button mr-4 h-[3rem]"><dhi-save-job job-id="42dd9b83-b523-49d5-90e4-be626a821cbd" job-title="Java Developer" analytics-category="Job Description Page" classname="saveJobBtn" class="dhi-css-reset hydrated"></dhi-save-job></div><div class="apply-button flex-auto md:flex-none h-[3rem]"><apply-button-wc job-id="42dd9b83-b523-49d5-90e4-be626a821cbd" job-title="Java Developer" class="hydrated"></apply-button-wc></div></div></div>
+//*[@id='__next']/div/main/header/div/div/div[4]
+
+<div class="apply-button flex-auto md:flex-none h-[3rem]"><apply-button-wc job-id="42dd9b83-b523-49d5-90e4-be626a821cbd" job-title="Java Developer" class="hydrated"></apply-button-wc></div>
+//*[@id="__next"]/div/main/header/div/div/div[4]/div[2]/div[2]
+
+<div class="w-full flex justify-end"><div class="job-search-button mr-4 h-[3rem]">
+<dhi-save-job job-id="7be54331-5edc-4a67-b926-2c5faca1f61e" job-title="Junior Business Analyst" analytics-category="Job Description Page"
+ classname="saveJobBtn" class="dhi-css-reset hydrated"></dhi-save-job></div><div class="apply-button flex-auto md:flex-none h-[3rem]"><apply-button-wc job-id="7be54331-5edc-4a67-b926-2c5faca1f61e" job-title="Junior Business Analyst" class="hydrated"></apply-button-wc></div></div>
+
+
+<button class="btn btn-primary">Easy Apply</button>
+//*[@id="__next"]/div/main/header/div/div/div[4]/div[2]/div[2]/apply-button-wc//apply-button/div/button
+
+//*[@id="pagination_2"]/pagination/ul/li[7]/a
+<a href="" class="page-link" rel="nofollow">»<!----></a>
+<a href="" class="page-link" rel="nofollow">»<!----></a>
+#pagination_2 > pagination > ul > li.pagination-next.page-item.ng-star-inserted > a
+document.querySelector("#pagination_2 > pagination > ul > li.pagination-next.page-item.ng-star-inserted > a")
+
+//*[@id='pagination_2']/pagination/ul/li[7]/a
