@@ -1,3 +1,5 @@
+import math
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import sys
@@ -24,7 +26,7 @@ password.send_keys(Keys.ENTER)
 time.sleep(5)
 chrome_driver.get(
     "https://www.dice.com/jobs?countryCode=US&radius=30&radiusUnit=mi&page=1&pageSize=20&language=en&eid=S2Q_,gKQ_")
-time.sleep(5)
+time.sleep(10)
 
 # search for java and remote filter by easy apply
 searchTerm = chrome_driver.find_element(By.XPATH, "//*[@id='typeaheadInput']")
@@ -45,52 +47,62 @@ jobPostingLinksParent = chrome_driver.find_element(By.XPATH, "//*[@id='searchDis
                                                              "3]/dhi-search-cards-widget/div")
 jobPostingLinks = jobPostingLinksParent.find_elements(By.TAG_NAME, "a")
 time.sleep(5)
-count = 0
+
+numOfJobs = chrome_driver.find_element(By.XPATH, "//*[@id='totalJobCount']").text
+numOfPages = math.ceil(int(numOfJobs.replace(",", ""))/20)
+pageCount = 0
 
 # iterate through links from job search and apply
-for jobPosting in jobPostingLinks:
-    jobPostingLinksParent = chrome_driver.find_element(By.XPATH, "//*[@id='searchDisplay-div']/div["
-                                                                 "3]/dhi-search-cards-widget/div")
-    jobPostingLinks = jobPostingLinksParent.find_elements(By.TAG_NAME, "a")
+while pageCount <= numOfPages:
+    count = 0
+    for jobPosting in jobPostingLinks:
+        jobPostingLinksParent = chrome_driver.find_element(By.XPATH, "//*[@id='searchDisplay-div']/div["
+                                                                     "3]/dhi-search-cards-widget/div")
+        jobPostingLinks = jobPostingLinksParent.find_elements(By.TAG_NAME, "a")
 
-    actions = ActionChains(chrome_driver)
-    actions.move_to_element(jobPostingLinks[count]).perform()
-    time.sleep(2)
-    jobPostingLinks[count].click()
-    count = count + 1
-    time.sleep(5)
-    try:
-        easyApplyGreatGrandParent = chrome_driver.find_element(By.XPATH, "//*[@id='__next']/div/main/header")
-        easyApplyGrandParent = easyApplyGreatGrandParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header"
-                                                                                "/div/div")
-        easyApplyParent = easyApplyGrandParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header/div/div/div["
-                                                                      "4]/div[2]/div[2]")
-        easyApplyButton = easyApplyParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header/div/div/div[4]/div["
-                                                                 "2]/div[2]/apply-button-wc")
-        easyApplyButton.click()
+        actions = ActionChains(chrome_driver)
+        actions.move_to_element(jobPostingLinks[count]).perform()
+        time.sleep(2)
+        if "DO NOT APPLY" in jobPostingLinks[count].text:
+            # move to next link for dice test account
+            count = count + 1
+            continue
+        jobPostingLinks[count].click()
+        count = count + 1
         time.sleep(5)
+        try:
+            easyApplyGreatGrandParent = chrome_driver.find_element(By.XPATH, "//*[@id='__next']/div/main/header")
+            easyApplyGrandParent = easyApplyGreatGrandParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header"
+                                                                                    "/div/div")
+            easyApplyParent = easyApplyGrandParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header/div/div/div["
+                                                                          "4]/div[2]/div[2]")
+            easyApplyButton = easyApplyParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header/div/div/div[4]/div["
+                                                                     "2]/div[2]/apply-button-wc")
+            easyApplyButton.click()
+            time.sleep(5)
 
-        nextButtonGreatGrandParent = chrome_driver.find_element(By.XPATH, "/html/body/div[3]")
-        nextButtonGrandParent = nextButtonGreatGrandParent.find_element(By.XPATH, "//*[@id='app']/div/span")
-        nextButtonParent = nextButtonGrandParent.find_element(By.XPATH, "//*[@id='app']/div/span/div/main")
-        nextButton = nextButtonParent.find_element(By.XPATH, "//*[@id='app']/div/span/div/main/div[4]/button[2]")
-        nextButton.click()
-        time.sleep(5)
+            nextButtonGreatGrandParent = chrome_driver.find_element(By.XPATH, "/html/body/div[3]")
+            nextButtonGrandParent = nextButtonGreatGrandParent.find_element(By.XPATH, "//*[@id='app']/div/span")
+            nextButtonParent = nextButtonGrandParent.find_element(By.XPATH, "//*[@id='app']/div/span/div/main")
+            nextButton = nextButtonParent.find_element(By.XPATH, "//*[@id='app']/div/span/div/main/div[4]/button[2]")
+            nextButton.click()
+            time.sleep(5)
 
-        applyButton = chrome_driver.find_element(By.XPATH, "//*[@id='app']/div/span/div/main/div[3]/button[2]")
-        applyButton.click()
-        time.sleep(5)
+            applyButton = chrome_driver.find_element(By.XPATH, "//*[@id='app']/div/span/div/main/div[3]/button[2]")
+            applyButton.click()
+            time.sleep(5)
 
-        goToSearch = chrome_driver.find_element(By.XPATH, "/html/body/div[3]/div[4]/div/div["
-                                                          "1]/dhi-job-applications-post-apply-ui/section/a")
-        goToSearch.click()
+            goToSearch = chrome_driver.find_element(By.XPATH, "/html/body/div[3]/div[4]/div/div["
+                                                              "1]/dhi-job-applications-post-apply-ui/section/a")
+            goToSearch.click()
 
-        time.sleep(10)
-    except:
-        chrome_driver.back()
-        time.sleep(10)
+            time.sleep(12)
+        except:
+            chrome_driver.back()
+            time.sleep(12)
 
-# click to next page
-nextPage = chrome_driver.find_element(By.XPATH, "//*[@id='pagination_2']/pagination/ul/li[7]/a")
-nextPage.click()
-time.sleep(10)
+    # click to next page
+    nextPage = chrome_driver.find_element(By.XPATH, "//*[@id='pagination_2']/pagination/ul/li[7]/a")
+    nextPage.click()
+    time.sleep(10)
+    pageCount = pageCount + 1
