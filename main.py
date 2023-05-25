@@ -1,4 +1,6 @@
 import math
+import os
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import selenium
@@ -10,20 +12,24 @@ from selenium.webdriver.common.keys import Keys
 import time
 from selenium.webdriver.common.action_chains import ActionChains
 
+print(time.localtime())
+
+options = webdriver.ChromeOptions()
+options.add_argument("--disable-popup-blocking")
+options.add_argument("--disable-notifications")
+
+
 # navigate to Dice login page
-chrome_driver = webdriver.Chrome()
+chrome_driver = webdriver.Chrome(options=options)
 chrome_driver.get("https://www.dice.com/apply-with-dice/login?buttonType=easyApply")
 chrome_driver.maximize_window()
 
 wait = WebDriverWait(chrome_driver, 60)
 
 # Login to Dice
-chrome_driver.implicitly_wait(5)
 username = chrome_driver.find_element(By.NAME, "email")
-chrome_driver.implicitly_wait(2)
 username.send_keys("mnt19@pitt.edu")
 password = chrome_driver.find_element(By.ID, "password-input")
-chrome_driver.implicitly_wait(2)
 password.send_keys("pass")
 password.send_keys(Keys.ENTER)
 
@@ -53,19 +59,20 @@ numOfPages = math.ceil(int(numOfJobs.replace(",", "")) / 20)
 pageCount = 0
 
 # iterate through links from job search and apply
-while pageCount <= numOfPages:
+while pageCount < numOfPages:
 
     jobPostingLinksParent = wait.until(EC.presence_of_element_located((By.XPATH, "//*[@id='searchDisplay-div']/div["
                                                                                  "3]/dhi-search-cards-widget/div")))
     time.sleep(3)
     jobPostingLinks = jobPostingLinksParent.find_elements(By.TAG_NAME, "a")
+    stringURL = chrome_driver.current_url
     count = 0
 
     while count < len(jobPostingLinks):
-        time.sleep(5)
+        # time.sleep(5)
         jobPostingLinksParent = wait.until(
-            EC.presence_of_element_located((By.XPATH, "//*[@id='searchDisplay-div']/div["
-                                                      "3]/dhi-search-cards-widget/div")))
+            EC.visibility_of_element_located(
+                (By.XPATH, "//*[@id='searchDisplay-div']/div[3]/dhi-search-cards-widget/div")))
         time.sleep(3)
         jobPostingLinks = jobPostingLinksParent.find_elements(By.TAG_NAME, "a")
 
@@ -78,13 +85,16 @@ while pageCount <= numOfPages:
             continue
         print(jobPostingLinks[count].text)
         jobPostingLinks[count].click()
-        count = count+2
+        count = count + 2
         time.sleep(5)
         try:
             easyApplyGreatGrandParent = chrome_driver.find_element(By.XPATH, "//*[@id='__next']/div/main/header")
-            easyApplyGrandParent = easyApplyGreatGrandParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header/div/div")
-            easyApplyParent = easyApplyGrandParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header/div/div/div[4]/div[2]/div[2]")
-            easyApplyButton = easyApplyParent.find_element(By.XPATH, "//*[@id='__next']/div/main/header/div/div/div[4]/div[2]/div[2]/apply-button-wc")
+            easyApplyGrandParent = easyApplyGreatGrandParent.find_element(By.XPATH,
+                                                                          "//*[@id='__next']/div/main/header/div/div")
+            easyApplyParent = easyApplyGrandParent.find_element(By.XPATH,
+                                                                "//*[@id='__next']/div/main/header/div/div/div[4]/div[2]/div[2]")
+            easyApplyButton = easyApplyParent.find_element(By.XPATH,
+                                                           "//*[@id='__next']/div/main/header/div/div/div[4]/div[2]/div[2]/apply-button-wc")
             easyApplyButton.click()
             time.sleep(5)
             nextButtonGreatGrandParent = chrome_driver.find_element(By.XPATH, "/html/body/div[3]")
@@ -96,15 +106,18 @@ while pageCount <= numOfPages:
             time.sleep(5)
             applyButton = chrome_driver.find_element(By.XPATH,
                                                      "//*[@id='app']/div/span/div/main/div[3]/button[2]")
+            chrome_driver.execute_script("window.onbeforeunload = function() {};")
             applyButton.click()
             time.sleep(5)
 
-            goToSearch = chrome_driver.find_element(By.XPATH, "/html/body/div[3]/div[4]/div/div["
-                                                              "1]/dhi-job-applications-post-apply-ui/section/a")
-            goToSearch.click()
+            # goToSearch = chrome_driver.find_element(By.XPATH, "/html/body/div[3]/div[4]/div/div["
+            #                                                   "1]/dhi-job-applications-post-apply-ui/section/a")
+            # goToSearch.click()
+            chrome_driver.get(stringURL)
 
         except:
-            chrome_driver.back()
+            chrome_driver.execute_script("window.onbeforeunload = function() {};")
+            chrome_driver.get(stringURL)
 
     # click to next page
     nextPage = wait.until(EC.visibility_of_element_located((By.XPATH, "//*[@id='pagination_2']/pagination/ul/li[7]/a")))
@@ -113,3 +126,4 @@ while pageCount <= numOfPages:
     pageCount = pageCount + 1
     print(count)
     print(pageCount)
+    print(time.localtime())
